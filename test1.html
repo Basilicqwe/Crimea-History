@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта с маркерами</title>
+    <style>
+        #map {
+            height: 100vh; /* Высота карты */
+            width: 100%; /* Ширина карты */
+        }
+        .back-button {
+            position: absolute;
+            top: 20px; /* Отступ от верхнего края */
+            right: 20px; /* Отступ от правого края */
+            padding: 10px 15px; /* Отступы внутри кнопки */
+            background-color: #3498db; /* Цвет фона кнопки */
+            color: white; /* Цвет текста */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Скругление краев */
+            cursor: pointer; /* Курсор при наведении */
+            font-size: 16px; /* Размер шрифта */
+        }
+        .back-button:hover {
+            background-color: #2980b9; /* Цвет кнопки при наведении */
+        }
+    </style>
+</head>
+<body>
+
+<button class="back-button" onclick="window.location.href='index.html';">Назад</button>
+
+<div id="map"></div>
+
+<script>
+    function initMap() {
+        // Создаем карту
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: { lat: 44.95, lng: 34.10 }, // Центр карты (Крым)
+        });
+
+        // Первая точка
+        const marker1 = new google.maps.Marker({
+            position: { lat: 45.0, lng: 34.0 }, // Координаты первой точки
+            map: map,
+            title: "Первая точка",
+        });
+
+        // Вторая точка
+        const marker2 = new google.maps.Marker({
+            position: { lat: 44.5, lng: 33.5 }, // Координаты второй точки
+            map: map,
+            title: "Вторая точка",
+        });
+    }
+</script>
+
+<!-- Подключаем Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+</body>
+</html>

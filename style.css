@@ -1,0 +1,67 @@
+.topflex{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+} 
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.img{
+    width: 100vw;
+    height: 100vw;
+    align-items: center;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    background-color:#f2f2f2;
+}
+.map {
+    background-image: url('img/map5.png'); 
+    background-size: cover;
+    width: 1830px;
+    height: 1220px; 
+    position: relative;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #3856cf;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    position: relative; 
+}
+.rectangle{
+    width: 100px;
+    height: 160px;
+    background-color: #2ecc71;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    border-radius: 7px; /* Скругление краев прямоугольника */
+}
+.container:hover .rectangle {
+    bottom: calc(100% + 10px);
+    opacity: 1; 
+}
+.img_person{
+    display:flex;
+    flex-direction: column;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Крыма с Керчью</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center; /* Центрируем по вертикали */
+            height: 100vh; /* Высота вьюпорта */
+            background-color: #f0f0f0; /* Цвет фона */
+        }
+        .map {
+            background-image: url('img/map.png'); /* Замените на URL вашей карты */
+            background-size: cover;
+            width: 1599px; /* Ширина карты */
+            height: 1084px; /* Высота карты */
+            position: relative;
+        }
+        .container {
+            position: absolute;
+            top: 80%; /* Позиция по вертикали (примерное положение Керчи) */
+            left: 85%; /* Позиция по горизонтали (примерное положение Керчи) */
+            transform: translate(-50%, -50%); /* Центрируем контейнер */
+        }
+        .circle {
+            width: 5px;
+            height: 5px;
+            background-color: #3498db;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative; /* Относительное позиционирование для прямоугольника */
+        }
+        .rectangle {
+            width: 100px; /* Ширина прямоугольника */
+            height: 30px; /* Высота прямоугольника */
+            background-color: #2ecc71;
+            position: absolute;
+            bottom: calc(100% + 10px); /* Скрываем прямоугольник над кружком */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0; /* Скрываем прямоугольник */
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center; /* Центрируем текст по вертикали */
+            justify-content: center; /* Центрируем текст по горизонтали */
+            color: white; /* Цвет текста */
+            font-size: 14px; /* Размер шрифта */
+        }
+        .container:hover .rectangle {
+            bottom: calc(100% + 10px); /* Выдвигаем прямоугольник вверх */
+            opacity: 1; /* Делаем его видимым */
+        }
+    </style>
+</head>
+<body>
+
+<div class="map">
+    <div class="container" style="top: 80%; left: 85%;"> <!-- Позиция кружка на Керчи -->
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D1%87%D1%8C" target="_blank"> <!-- Ссылка на страницу о Керчи -->
+            <div class="circle"></div>
+        </a>
+        <div class="rectangle">
+            <p>Керчь <br> <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D1%87%D1%8C">Ссылка</a> </p>
+            
+            
+        </div> <!-- Текст в прямоугольнике -->
+    </div>
+</div>
+
+</body>
+</html>
